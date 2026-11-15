@@ -18,7 +18,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Build debug APK
         run: |
-          ROOT=$(find app_src -name settings.gradle -print -quit | xargs dirname)
+          ROOT=$(find app_src -name "settings.gradle*" -print -quit | xargs dirname)
           echo "ROOT=$ROOT"
           cd "$ROOT"
           gradle assembleDebug --stacktrace
